@@ -17,6 +17,7 @@
 // });
 Route::get('/', function () {
     return view('welcome');
+    // phpinfo();
 });
 
 Route::resource("predict","GrammarController");

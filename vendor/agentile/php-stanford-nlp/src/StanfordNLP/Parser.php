@@ -152,14 +152,8 @@ class Parser extends Base {
         // Word and tags is first
         // penn is second
         // typed dependencies is last.
-        // For Windows, change to:
-        // $output = explode("\r\n\r\n", trim($this->getOutput()));
-
-        // For Mac systems try:
-        // $output = explode("\r\r", trim($this->getOutput()));
         $output = explode("\n\n", trim($this->getOutput()));
 
-        return $output;
         $formats = explode(',', $this->getOutputFormat());
         foreach ($formats as $k => $v) {
             $formats[$k] = trim(strtolower($v));
