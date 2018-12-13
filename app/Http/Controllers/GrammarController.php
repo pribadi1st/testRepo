@@ -8,7 +8,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 use StanfordNLP\POSTagger;
-
+use DB;
 class GrammarController extends Controller
 {
     /**
@@ -71,7 +71,7 @@ class GrammarController extends Controller
         foreach ($result[0] as $key => $value) {
             array_push($tags, $value[1]);
         }
-        $bab = 9;
+        $bab = $request->bab;
         $query_create="CREATE TEMPORARY TABLE patterns ( pattern varchar(20) )";
         $query_insert = "insert into patterns VALUES "; 
         $count=0;
